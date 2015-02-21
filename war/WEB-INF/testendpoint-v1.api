@@ -1,0 +1,169 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://myapp.appspot.com/_ah/api",
+  "name" : "testendpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://myapp.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "app.testcase",
+  "ownerName" : "app.testcase",
+  "methods" : {
+    "testendpoint.addTestObject" : {
+      "path" : "addTestObject",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "app.testcase.TestEndpoint.addTestObject",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "testendpoint.listTestObjects" : {
+      "path" : "testobject",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "app.testcase.TestEndpoint.listTestObjects",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "testendpoint.updateTestObject" : {
+      "path" : "testobject/{key}",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "app.testcase.TestEndpoint.updateTestObject",
+      "request" : {
+        "parameters" : {
+          "key" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "testendpoint.getTestObject" : {
+      "path" : "testobject/{key}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "app.testcase.TestEndpoint.getTestObject",
+      "request" : {
+        "parameters" : {
+          "key" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "TestObject" : {
+        "id" : "TestObject",
+        "type" : "object",
+        "properties" : {
+          "key" : {
+            "type" : "string"
+          },
+          "listField" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "booleanField" : {
+            "type" : "boolean"
+          },
+          "stringField" : {
+            "type" : "string"
+          }
+        }
+      },
+      "TestObjectCollection" : {
+        "id" : "TestObjectCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "TestObject"
+            }
+          }
+        }
+      }
+    },
+    "methods" : {
+      "app.testcase.TestEndpoint.addTestObject" : {
+        "request" : {
+          "$ref" : "TestObject"
+        },
+        "response" : {
+          "$ref" : "TestObject"
+        }
+      },
+      "app.testcase.TestEndpoint.listTestObjects" : {
+        "response" : {
+          "$ref" : "TestObjectCollection"
+        }
+      },
+      "app.testcase.TestEndpoint.updateTestObject" : {
+        "request" : {
+          "$ref" : "TestObject"
+        },
+        "response" : {
+          "$ref" : "TestObject"
+        }
+      },
+      "app.testcase.TestEndpoint.getTestObject" : {
+        "response" : {
+          "$ref" : "TestObject"
+        }
+      }
+    }
+  }
+}
