@@ -1,10 +1,13 @@
 # Test Case for Google Support Case #05487757
 This is a test case project for Google support case #05487757.  This is intended to demonstrate an issue I'm having with AppEngine Datatore and JDO.  This will demonstrate that while the data appears to be stored, it is not persisted in the development environment.  While I may have a configuration or code improperly implemented, this will help assist Google in resolving my case.  Look for updates at the bottom of this readme when I receive a correction.
+
 ### Summary
 When I update data for an Entity the JDO layer appears to see the change (sometimes), but the Datastore Admin (/_ah/admin) will not.  Furthermore, when I stop and restart the dev_appserver the data changes are lost.
+
 ### Environment
 * AppEngine SDK 1.9.17 (1.9.18 was the latest at this writing)
 * Eclipse (for project creation and development)
+
 ### Steps To Reproduce
 1. Start dev_appserver
 2. Go to the API Explorer (/_ah/api/explorer)
