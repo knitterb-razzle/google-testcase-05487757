@@ -1,12 +1,12 @@
 {
   "extends" : "thirdParty.api",
   "abstract" : false,
-  "root" : "https://myapp.appspot.com/_ah/api",
+  "root" : "https://testcase-05487757.appspot.com/_ah/api",
   "name" : "testendpoint",
   "version" : "v1",
   "defaultVersion" : false,
   "adapter" : {
-    "bns" : "https://myapp.appspot.com/_ah/spi",
+    "bns" : "https://testcase-05487757.appspot.com/_ah/spi",
     "deadline" : 65.0,
     "type" : "lily"
   },
@@ -107,9 +107,6 @@
         "id" : "TestObject",
         "type" : "object",
         "properties" : {
-          "key" : {
-            "type" : "string"
-          },
           "listField" : {
             "type" : "array",
             "items" : {
@@ -120,6 +117,9 @@
             "type" : "boolean"
           },
           "stringField" : {
+            "type" : "string"
+          },
+          "id" : {
             "type" : "string"
           }
         }

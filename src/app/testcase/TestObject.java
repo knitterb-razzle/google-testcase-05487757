@@ -14,6 +14,7 @@ import com.google.api.server.spi.config.ApiResourceProperty;
 public class TestObject {
 	
     @PrimaryKey
+	@ApiResourceProperty(name = "id")
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
     @Extension(vendorName="datanucleus", key="gae.encoded-pk", value="true")
 	public String key;
