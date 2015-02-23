@@ -17,7 +17,7 @@ public class TestObject {
 	@ApiResourceProperty(name = "id")
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
     @Extension(vendorName="datanucleus", key="gae.encoded-pk", value="true")
-	public String key;
+	public String myKey;
 
     @Persistent
 	public List<String> listField;

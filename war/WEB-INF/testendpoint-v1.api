@@ -58,7 +58,7 @@
       }
     },
     "testendpoint.updateTestObject" : {
-      "path" : "testobject/{key}",
+      "path" : "testobject/{myKey}",
       "httpMethod" : "PUT",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
@@ -67,7 +67,7 @@
       "rosyMethod" : "app.testcase.TestEndpoint.updateTestObject",
       "request" : {
         "parameters" : {
-          "key" : {
+          "myKey" : {
             "type" : "string",
             "required" : true
           }
@@ -80,7 +80,7 @@
       }
     },
     "testendpoint.getTestObject" : {
-      "path" : "testobject/{key}",
+      "path" : "testobject/{myKey}",
       "httpMethod" : "GET",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
@@ -89,7 +89,7 @@
       "rosyMethod" : "app.testcase.TestEndpoint.getTestObject",
       "request" : {
         "parameters" : {
-          "key" : {
+          "myKey" : {
             "type" : "string",
             "required" : true
           }

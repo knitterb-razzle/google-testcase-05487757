@@ -38,18 +38,18 @@ public class TestEndpoint {
 	}
 	
 	@ApiMethod(name = "getTestObject", httpMethod = HttpMethod.GET)
-	public TestObject getTestObject(@Named("key") String key) {
+	public TestObject getTestObject(@Named("myKey") String myKey) {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
-		TestObject rc=pm.getObjectById(TestObject.class, key);
+		TestObject rc=pm.getObjectById(TestObject.class, myKey);
 		
 		pm.close();
 		return rc;
 	}
 	
 	@ApiMethod(name = "updateTestObject", httpMethod = HttpMethod.PUT)
-	public TestObject updateTestObject(@Named("key") String key, TestObject testObject) {
+	public TestObject updateTestObject(@Named("myKey") String myKey, TestObject testObject) {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
-		TestObject rc=pm.getObjectById(TestObject.class, key);
+		TestObject rc=pm.getObjectById(TestObject.class, myKey);
 		
 		if (testObject.stringField != null)
 			rc.stringField=testObject.stringField;
