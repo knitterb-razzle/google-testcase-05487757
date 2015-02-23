@@ -26,6 +26,14 @@ public class TestObject {
 	public Boolean booleanField;
 	
     @Persistent
-	public String stringField;
+	private String stringField;
+
+	public String getStringField() {
+		return stringField;
+	}
+
+	public void setStringField(String stringField) {
+		this.stringField = stringField;
+	}
 
 }

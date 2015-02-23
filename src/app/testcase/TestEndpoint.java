@@ -5,12 +5,14 @@ import java.util.List;
 import javax.inject.Named;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
+import javax.jdo.annotations.PersistenceAware;
 
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
 import com.google.api.server.spi.config.ApiMethod.HttpMethod;
 
+//@PersistenceAware
 @Api(name = "testendpoint", version = "v1", namespace = @ApiNamespace(ownerDomain = "app.testcase", ownerName = "app.testcase", packagePath = ""))
 public class TestEndpoint {
 	
@@ -51,10 +53,10 @@ public class TestEndpoint {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		TestObject rc=pm.getObjectById(TestObject.class, myKey);
 		
-		if (testObject.stringField != null)
-			rc.stringField=testObject.stringField;
 		if (testObject.booleanField != null)
 			rc.booleanField=testObject.booleanField;
+		if (testObject.getStringField() != null)
+			rc.setStringField(testObject.getStringField());
 		if (testObject.listField != null)
 			rc.listField=testObject.listField;
 		
