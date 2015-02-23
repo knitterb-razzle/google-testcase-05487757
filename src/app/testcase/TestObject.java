@@ -18,10 +18,13 @@ public class TestObject {
     @Extension(vendorName="datanucleus", key="gae.encoded-pk", value="true")
 	public String key;
 
+    @Persistent
 	public List<String> listField;
 	
+    @Persistent
 	public Boolean booleanField;
 	
+    @Persistent
 	public String stringField;
 
 }
